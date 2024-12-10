@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(154, 222, 168) !important;
+}
+section{
+    border-radius: 25px; /* Esquinas redondeadas */
+    box-shadow: 0 5px 10px rgba(8, 151, 180, 0.7); /* Sombra más intensa */
+    border-color: #000000;    
+}
+h1{
+    font-family: "Farsan", cursive;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.contenedor {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .main-content {
+        justify-content: center; /* Centra el contenido en dispositivos móviles */
+    }
+    section {
+        max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    }
+}
+.cuadro {
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene los elementos en una sola línea */
+    gap: 5px; /* Espacio entre los inputs */
+    padding: 10px;
+}
+.numero {
+    flex: 1; /* Ajusta el tamaño de los inputs para que todos ocupen el mismo espacio */
+    min-width: 0; /* Permite que los inputs se reduzcan por debajo de su contenido */
+    width: 30px; /* Ancho fijo para asegurar que el círculo sea perfectamente redondo */
+    height: 30px; /* Altura fija para asegurar que el círculo sea perfectamente redondo */
+    box-shadow: 0 5px 10px rgba(8, 151, 180, 0.7); /* Sombra más intensa */
+    border-color: #1597b1;    
+    border-radius: 25px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    text-align: center;
+    line-height: 30px; /* Igual al alto para centrar el texto verticalmente */
+    border: 1px solid #000; /* Añade un borde para resaltar el círculo */
+}
+
+.oculto {
+    visibility: hidden; /* Hace que el elemento no sea visible pero ocupe espacio */
+    /* Alternativamente, puedes usar opacity: 0; para hacer el elemento completamente transparente */
+}

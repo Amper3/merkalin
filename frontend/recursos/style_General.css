@@ -1,0 +1,294 @@
+
+body{
+  font-family: "Farsan", cursive;
+  font-style: normal;
+  background-color:rgba(135, 193, 255, 0.43);
+  padding: 3px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.navbar-brand{
+  font-family: "Kaushan Script", cursive;
+  font-weight: 800;
+  font-size:x-large;
+}
+
+.navbar{
+  background-image: url('/frontend/recursos/img/fondo.png');
+  background-size: cover;
+}
+
+.btn-close{
+  background-color: #ff0000;
+}
+
+/* PERFIL USUARIO */
+
+.offcanvas{
+    background-image: url('/frontend/recursos/img/fondo.png');
+    /* background: linear-gradient(180deg, #2874D9, #83A3E1, #3B9CDE, #5CE1E6); Degradado de arriba hacia abajo */
+    background-size: cover; 
+    font-size:20px;
+  }
+  li{
+    font-weight: bold;
+  }
+  .card_perfil {
+    --bg-color: #83A3E1;
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    background: var(--bg-color);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    box-shadow: 0 6px 15px #0897B4; /* Sombra sutil para el estilo */
+    border-color: #1597b1;    
+    border-radius: 25px; /* Esquinas redondeadas */
+  } 
+  .card__portada {
+    height: 192px;
+    width: 100%;
+  }
+  .card__portada img {
+    height: 100%;
+    border-radius: 40px 40px 0 0;
+    /* border-bottom: 1px solid;
+    border-color: #2874D9; */
+  }  
+  .card__avatar {
+    position: absolute;
+    width: 114px;
+    height: 114px;
+    background: var(--bg-color);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - 57px);
+    overflow: hidden; /* Para que la imagen no sobresalga del círculo */
+
+  }
+  .card__avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien al círculo */
+    border-radius: 100%; /* Mantiene la imagen en forma circular */
+  }
+  .card__title {
+    margin-top: 60px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .card__subtitle {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .buton_nav {
+    /* margin: 5px; */
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #28a2ff;
+    box-shadow: 0 6px 10px #0897B4; /* Sombra sutil para el estilo */
+    border-color: #1597b1;    
+    border-radius: 25px; /* Esquinas redondeadas */
+    color: white;
+  }
+  .boton_config{
+    width: 50px;
+    border-radius: 100%;
+    justify-content: center !important;
+    justify-items: center;
+    background: #ffffff36;
+  }
+  .buton_nav:hover {
+    background: #2b68f6;
+  }
+  .buton_nav > i{
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .buton_nav:hover i {
+    transform: translateX(7px);
+  }
+  .buton_nav:active {
+    transform: scale(1);
+}
+
+
+h1{
+  text-align: center;
+  font-family: "Farsan", cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ESTRELLAS / CALIFICACION */
+.rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+  }
+
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+  }
+
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+  }
+
+  .rating > input:checked ~ label {
+    color: #ffa723;
+}
+
+.buscar {
+  font-family: "Farsan", cursive;
+  display: flex;          /* Usar flexbox para centrado */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  width: 80%;             /* Definir un ancho deseado */
+  margin: 0 auto;         /* Centrar el contenedor horizontalmente */
+}
+
+.buscar form {
+  display: flex;          /* Asegura que el contenido dentro del form también use flexbox */
+  justify-content: center; /* Centrar los elementos dentro del form */
+  width: 100%;            /* Asegura que el form ocupe el ancho total de .buscar */
+}
+
+/* FOOTER */
+  footer{
+    font-family: "Farsan", cursive;
+    font-style: normal;
+  }
+
+  footer div{
+    margin-left: -10px;
+    margin-top: 10px;
+  }
+  footer div ul li{
+    margin: 2px;
+  }
+
+  .redes {
+    display: inline-flex;
+    list-style: none;
+    max-width: 100%;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+
+  .redes .icon {
+    position: relative;
+    background: #37cb4479;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .redes .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .redes .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .redes .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .redes .icon:hover span,
+  .redes .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .redes .whatsapp:hover,
+  .redes .whatsapp:hover .tooltip,
+  .redes .whatsapp:hover .tooltip::before {
+    background: hsl(140, 60%, 53%);
+    color: #fff;
+  }
+
+  .redes .phone:hover,
+  .redes .phone:hover .tooltip,
+  .redes .phone:hover .tooltip::before {
+    background: hsl(116, 80%, 45%);
+    color: #fff;
+  }
+
+  .redes .facebook:hover,
+  .redes .facebook:hover .tooltip,
+  .redes .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #fff;
+  }
+
+  .redes .instagram:hover,
+  .redes .instagram:hover .tooltip,
+  .redes .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #fff;
+  }
+
+  .redes .googlemaps:hover,
+  .redes .googlemaps:hover .tooltip,
+  .redes .googlemaps:hover .tooltip::before {
+    background: #ffffff;
+    color: #000000;
+  }
+  .navigation{
+    width: 100% !important;
+}
+

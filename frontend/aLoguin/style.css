@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el formulario esté centrado verticalmente */
+  background-color: #f4f4f4; /* Color de fondo para mayor contraste */
+}
+.main-content{
+  font-size: small !important;
+  padding: 35px;
+  max-width: 500px;
+  width: 80%;
+  box-shadow: 0 6px 10px #0897B4; /* Sombra sutil para el estilo */
+  border-color: #1597b1;    
+  border-radius: 25px; /* Esquinas redondeadas */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  background-color: rgb(93, 90, 194);
+}
+form div input{
+  width: 80%; /* Ajusta este valor para hacer el input más pequeño */
+  margin: auto; /* Centra el input si es más pequeño que el contenedor */
+  box-shadow: 0 6px 10px #9be2f0; /* Sombra sutil para el estilo */
+  border-color: #ffffff;    
+  border-radius: 25px; /* Esquinas redondeadas */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.btn-primary{
+  color: black;
+ background-color: white;
+}
+h1{
+  text-align: center;
+  font-family: "Farsan", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+p{
+  padding: 3px;
+  color: white;
+}
+a{
+  color: rgb(82, 173, 209);
+}
+.form-check{
+  color: white;
+}
+.justified-list,
+.justified-list li,
+.justified-list ol {
+text-align: justify;
+}
+.justified-list{
+    margin: 5px;
+}

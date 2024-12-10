@@ -1,0 +1,94 @@
+h1{
+    text-align: center;
+    font-family: "Farsan", cursive;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h5{
+    background-color:white;
+    border-radius: 25px; /* Esquinas redondeadas */
+    margin: 5px;
+    padding: 15px;
+    font-family: "Farsan", cursive;
+    font-size: 30px;
+}
+.card-title a {
+    background-color: #75e1ed;
+    width: 20px; /* Ajusta el tamaño según lo necesites */
+    height: 20px; /* Igual al ancho para que sea un círculo */
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Hace que sea un círculo */
+}
+.card {
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding: 25px;
+    box-shadow: 0 6px 10px #0897B4; /* Sombra sutil para el estilo */
+    border-color: #1597b1;    
+    border-radius: 25px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    display: inline-block;
+    flex-direction: column;
+
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+.card:hover, .card:focus {
+    transform: translateY(-10px) scale(1.05); /* Levanta y escala la tarjeta */
+    box-shadow: 0 10px 20px rgba(8, 151, 180, 0.7); /* Sombra más intensa */
+}
+#quinta{
+    background-image: url('/frontend/recursos/img_cat/quinta.png');
+}
+#electronica{
+    background-image: url('/frontend/recursos/img_cat/electronica.png');
+}
+
+#moda{
+    background-image: url('/frontend/recursos/img_cat/belleza.png');
+}
+#hogar{
+    background-image: url('https://cdn.prod.website-files.com/6643a82fc46ca462b5ef9921/6643a82fc46ca462b5efa47c_649da5102ac93810b22611b2_27-10-articulos-de-adulto-independiente-que-no-pueden-faltar-en-tu-hogar.webp');
+}
+#taxis{
+    background-image: url('https://static3.depositphotos.com/1006458/211/i/950/depositphotos_2111331-stock-photo-fast-taxi.jpg');
+}
+#aaaaaa{
+    background-image: url('');
+}
+
+
+.card-body {
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca para ocupar espacio */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center; /* Centra el título */
+}
+
+.card-body li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: 95%;
+    }
+}
