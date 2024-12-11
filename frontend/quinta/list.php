@@ -87,18 +87,33 @@
                     const card = document.createElement("div");
                     card.classList.add("card");
 
+                    // let collageHTML = "";
+                    // item.imagenes.forEach((ruta, index) => {
+                    //     const imgClass = index === 0 ? "img_principal" : "img_secundario";
+                    //     const imgType = index === 0 ? "principal" : `secundaria_${index}`; // Para identificar el tipo de imagen
+
+                    //     collageHTML += `
+                    //         <div class="box ${imgClass}">
+                    //             <img src="${ruta || 'ruta/default.jpg'}" class="img-fluid" alt="Imagen ${index + 1}" 
+                    //                 onclick="openReplaceModal(this, ${item.id_sub_cat}, '${imgType}', '${item.nombre}')">
+                    //         </div>
+                    //     `;
+                    // });
+
                     let collageHTML = "";
                     item.imagenes.forEach((ruta, index) => {
                         const imgClass = index === 0 ? "img_principal" : "img_secundario";
                         const imgType = index === 0 ? "principal" : `secundaria_${index}`; // Para identificar el tipo de imagen
+                        const uniqueURL = `${ruta || 'ruta/default.jpg'}?t=${new Date().getTime()}`; // Marca de tiempo única
 
                         collageHTML += `
                             <div class="box ${imgClass}">
-                                <img src="${ruta || 'ruta/default.jpg'}" class="img-fluid" alt="Imagen ${index + 1}" 
+                                <img src="${uniqueURL}" class="img-fluid" alt="Imagen ${index + 1}" 
                                     onclick="openReplaceModal(this, ${item.id_sub_cat}, '${imgType}', '${item.nombre}')">
                             </div>
                         `;
                     });
+
 
 
                     card.innerHTML = `
@@ -295,7 +310,7 @@
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.success) {
-                        alert("Imagen reemplazada correctamente.");
+                        alert("Imagen reemplazada correctamente. Los cambios pueden verse después de cargar nuevamente la página.");
 
                         // Actualizar la imagen en el collage si está disponible
                         const collageImg = document.querySelector(`[src="${data.old_image}"]`);

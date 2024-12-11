@@ -107,6 +107,17 @@
                             </div>`;
                     });
 
+                    // let collageHTML = "";
+                    // item.imagenes.forEach((ruta, index) => {
+                    //     const imgClass = index === 0 ? "img_principal" : "img_secundario";
+                    //     const uniqueURL = `${ruta || 'ruta/default.jpg'}?t=${new Date().getTime()}`;
+                    //     collageHTML += `
+                    //         <div class="box ${imgClass}">
+                    //             <img src="${uniqueURL}" loading="lazy" class="img-fluid" alt="Imagen ${index + 1}" onclick="openModal_img(this)">
+                    //         </div>`;
+                    // });
+
+
                     card.innerHTML = `
                         <i class="bi bi-list titulo_left" onclick="openMyModal_info('${sanitizeHTML(item.nombre)}', '${sanitizeHTML(item.info_extra)}', '${sanitizeHTML(item.dias)}', '${sanitizeHTML(item.phone)}', '${sanitizeHTML(item.whatsapp)}', '${sanitizeHTML(item.facebook)}', '${sanitizeHTML(item.instagram)}', '${sanitizeHTML(item.address)}');"></i>
                         <div class="titulo_centro">
