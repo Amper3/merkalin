@@ -1,3 +1,53 @@
+//VERIFICAR NOMBRE:
+    async function validarNombre() {
+        const nombre = document.getElementById('nombre').value.trim();
+        const popover = document.getElementById('popover-validacion');
+        const popoverBody = popover.querySelector('.popover-body');
+
+        if (nombre === '') {
+            popover.style.display = 'none';
+            return;
+        }
+
+        try {
+            const response = await fetch('../../../backend/registros/quintas_name_V.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ nombre: nombre }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al validar el nombre.');
+            }
+
+            const data = await response.json();
+
+            if (data.existe) {
+                popoverBody.textContent = 'El nombre ya existe. Por favor, elige otro.';
+            } else {
+                popoverBody.textContent = 'El nombre está disponible.';
+            }
+
+            // Mostrar el popover y ocultarlo después de 2 segundos
+            popover.style.display = 'block';
+            setTimeout(() => {
+                popover.style.display = 'none';
+            }, 3000);
+
+        } catch (error) {
+            popoverBody.textContent = 'Error al validar el nombre.';
+            popover.style.display = 'block';
+
+            // Ocultar el popover después de 2 segundos en caso de error
+            setTimeout(() => {
+                popover.style.display = 'none';
+            }, 3000);
+
+            console.error(error);
+        }
+    }
 //  Checkboxes Dias
     const allDiasCheckbox = document.getElementById('all_dias');
     const diasCheckbox = document.getElementById('dias');

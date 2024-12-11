@@ -36,9 +36,12 @@
                         <!-- nombre -->
                         <div class="col-md-4 mb-3">
                             <h6><i class="bi bi-info-circle"></i> Nombre por el cual es conocida la quinta. El nombre ingresado no podrá ser modificado posteriormente.</h6>
-                            <div class="form-floating mb-3 d-flex align-items-center">
-                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
+                            <div class="form-floating mb-3 position-relative">
+                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" oninput="validarNombre()">
                                 <label for="nombre">Nombre de la quinta:</label>
+                                <div id="popover-validacion" class="popover fade show position-absolute" style="top: -60px; right: 10px; display: none;">
+                                    <div class="popover-body"></div>
+                                </div>
                             </div>
                         </div>
 
