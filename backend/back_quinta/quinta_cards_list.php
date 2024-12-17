@@ -41,7 +41,9 @@ if ($resultado->num_rows > 0) {
                 'whatsapp' => $fila['whatsapp'],
                 'facebook' => $fila['facebook'],
                 'instagram' => $fila['instagram'],
-                'imagenes' => [$fila['ruta_imagen']]
+                'imagenes' => [$fila['ruta_imagen']],
+                'activo' => [$fila['activo']],
+                'revisado' => [$fila['revisado']]
             ];
         }
     }
