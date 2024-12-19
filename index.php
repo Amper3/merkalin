@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Redireccionando...</title>
     <script>
-        window.location.href = "/frontend";
+        window.location.href = "/frontend/quinta";
     </script>
 </head>
 <body>

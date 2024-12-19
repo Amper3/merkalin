@@ -24,12 +24,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_sub_cat'], $_POST[
         exit;
     }
 
-    // Obtener ruta actual
-    $stmt = $conn->prepare("SELECT ruta_imagen FROM img_sub_cat WHERE id_sub_cat = ? AND ruta_imagen LIKE CONCAT('%', ?, '%')");
+    // Obtener ruta actual con collation unificado
+    $stmt = $conn->prepare("
+        SELECT ruta_imagen 
+        FROM img_sub_cat 
+        WHERE id_sub_cat = ? 
+        AND ruta_imagen COLLATE utf8mb4_general_ci LIKE CONCAT('%', ?, '%')
+    ");
     $stmt->bind_param("is", $id_sub_cat, $imageType);
     $stmt->execute();
     $result = $stmt->get_result();
     $currentImage = $result->fetch_assoc()['ruta_imagen'] ?? null;
+
 
     // Si ya existe la imagen actual, borrarla
     if ($currentImage && file_exists($currentImage)) {
@@ -39,7 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_sub_cat'], $_POST[
     $targetDir = "../../frontend/quinta/img_sub_cat";
     $fileExtension = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
 
-    $nombre = preg_replace('/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_-]/u', '_', $_POST['nombre']);
+    // $nombre = preg_replace('/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_-]/u', '_', $_POST['nombre']);
+    $nombre = preg_replace('/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s_-]/u', '_', urldecode($_POST['nombre']));
+
+
     $newFileName = $nombre . "_" . $imageType . "." . $fileExtension;
     $targetFile = $targetDir . "/" . $newFileName;
 

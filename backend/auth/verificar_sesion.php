@@ -18,7 +18,7 @@ if (!isset($_SESSION["id_uss"])) {
 }
 
 // Tiempo máximo de inactividad en segundos (10 minutos)
-$max_session_time = 1200;
+$max_session_time = 600;
 
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $max_session_time)) {
     // Destruir sesión y redirigir

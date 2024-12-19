@@ -87,18 +87,36 @@
                     const card = document.createElement("div");
                     card.classList.add("card");
 
+                    // let collageHTML = "";
+                    // item.imagenes.forEach((ruta, index) => {
+                    //     const imgClass = index === 0 ? "img_principal" : "img_secundario";
+                    //     const imgType = index === 0 ? "principal" : `secundaria_${index}`; // Para identificar el tipo de imagen
+
+                    //     collageHTML += `
+                    //         <div class="box ${imgClass}">
+                    //             <img src="${ruta || 'ruta/default.jpg'}" class="img-fluid" alt="Imagen ${index + 1}" 
+                    //                 onclick="openReplaceModal(this, ${item.id_sub_cat}, '${imgType}', '${item.nombre}')">
+                    //         </div>
+                    //     `;
+                    // });
+
                     let collageHTML = "";
                     item.imagenes.forEach((ruta, index) => {
                         const imgClass = index === 0 ? "img_principal" : "img_secundario";
                         const imgType = index === 0 ? "principal" : `secundaria_${index}`; // Para identificar el tipo de imagen
+                        const uniqueURL = `${ruta || 'ruta/default.jpg'}?t=${new Date().getTime()}`; // Marca de tiempo única
 
                         collageHTML += `
                             <div class="box ${imgClass}">
-                                <img src="${ruta || 'ruta/default.jpg'}" class="img-fluid" alt="Imagen ${index + 1}" 
+                                <img src="${uniqueURL}" class="img-fluid" alt="Imagen ${index + 1}" 
                                     onclick="openReplaceModal(this, ${item.id_sub_cat}, '${imgType}', '${item.nombre}')">
                             </div>
                         `;
                     });
+
+                    // Determinar propiedades del botón según `activo`
+                    const buttonClass = Number(item.activo) === 1 ? "btn-danger" : "btn-success";
+                    const buttonText = Number(item.activo) === 1 ? "Desactivar" : "Activar";
 
 
                     card.innerHTML = `
@@ -135,6 +153,8 @@
                                             <p>Número de WhatsApp: ${item.whatsapp || "No disponible"}</p>
                                             <p>Facebook: ${item.facebook || "No disponible"}</p>
                                             <p>Instagram: ${item.instagram || "No disponible"}</p>
+                                            <p>Activo: ${item.activo || "No disponible"}</p>
+                                            <p>Revisado: ${item.revisado || "No disponible"}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +162,7 @@
                             <br>
                             <div class="d-grid gap-2 d-md-block">
                                 <button class="btn btn-primary" type="button" onclick="editarItem('${item.id_sub_cat}', '${item.nombre}', '${item.colonia}', '${item.precio}', '${item.horario_inicio}','${item.horario_final}','${item.dias}','${item.info_extra}', '${item.address}','${item.phone}', '${item.whatsapp}', '${item.facebook}', '${item.instagram}')">Editar</button>
-                                <button class="btn btn-danger" type="button">Desactivar</button>
+                                <button class="btn ${buttonClass}" type="button" onclick="toggleActivo(${item.id_sub_cat}, ${item.activo})">${buttonText}</button>
                             </div>
                         </div>
                     `;
@@ -295,7 +315,7 @@
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.success) {
-                        alert("Imagen reemplazada correctamente.");
+                        alert("Imagen reemplazada correctamente. Los cambios pueden verse después de cargar nuevamente la página.");
 
                         // Actualizar la imagen en el collage si está disponible
                         const collageImg = document.querySelector(`[src="${data.old_image}"]`);
@@ -310,6 +330,28 @@
                     }
                 })
                 .catch((error) => console.error("Error:", error));
+        }
+    </script>
+
+    <script>
+        function toggleActivo(id, estadoActual, paginaActual) {
+            const nuevoEstado = estadoActual === 1 ? 0 : 1;
+            fetch("/backend/back_quinta/quinta_activo.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `id=${id}&activo=${nuevoEstado}`,
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    console.log("Estado actualizado correctamente.");
+                    location.reload(); // Recarga la página actual
+                } else {
+                    throw new Error(data.message || "Error al actualizar el estado.");
+                }
+            })
         }
     </script>
 </body>
