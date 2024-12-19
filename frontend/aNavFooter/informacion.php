@@ -28,64 +28,34 @@
             <br>
             <h1>¿Quiénes somos?</h1>
 
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Presentación.
-                    </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        Somos una <strong>plataforma diseñada para facilitar la búsqueda y conexión</strong> con quintas que ofrecen sus servicios al público. Nuestro objetivo es convertirnos en el <strong>directorio web</strong> de referencia, proporcionando información clara y precisa sobre contacto, ubicación y servicios disponibles.
-                        Trabajamos constantemente para mejorar tu experiencia, y nuestras futuras actualizaciones estarán orientadas a hacer de MerkaLin una herramienta aún más útil y accesible. ¡Esperamos que disfrutes explorar lo que tenemos para ofrecer!
-                    </div>
+            <div class="row">
+                <div class="col-4">
+                    <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">Presentación.</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">¿Qué sucede después de cargar toda mi información?</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">¿Cuándo estará disponible mi servicio para los usuarios?</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">¿Puedo hacer cambios durante el proceso de revisión?</a>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Servicios que Ofrezco.
-                    </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>¿Qué puedo hacer por ti?</strong>
-                        <ul>
-                            <li>Desarrollo de sistemas personalizados (ERP, CRM, etc.).</li>
-                            <li>Diseño y desarrollo de páginas web modernas y responsivas.</li>
-                            <li>Mantenimiento y soporte técnico para sistemas existentes.</li>
-                            <li>Consultoría en tecnología y digitalización.</li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Información Extra.
-                    </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Preguntas Frecuentes.
-                    </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+                <div class="col-8">
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0" style="height: 400px; overflow-y: auto;">
+                    
+                        <h4 id="list-item-1">Presentación.</h4>
+                        <p>Somos una <strong>plataforma diseñada para facilitar la búsqueda y conexión</strong> con quintas que ofrecen sus servicios al público. Nuestro objetivo es convertirnos en el <strong>directorio web</strong> de referencia, proporcionando información clara y precisa sobre contacto, ubicación y servicios disponibles.</p>
+                        <p>Trabajamos constantemente para mejorar tu experiencia, y nuestras futuras actualizaciones estarán orientadas a hacer de MerkaLin una herramienta aún más útil y accesible. ¡Esperamos que disfrutes explorar lo que tenemos para ofrecer!</p>
+                        
+                        <h4 id="list-item-2">¿Qué sucede después de cargar toda mi información?</h4>
+                        <p>Una vez que se carga la información, esta entra en un proceso de revisión que puede tardar hasta 24 horas. Durante este proceso, se verifica que las imágenes, descripciones y demás datos cumplan con los términos y condiciones de uso de la plataforma.</p>
+                        
+                        <h4 id="list-item-3">¿Cuándo estará disponible mi servicio para los usuarios?</h4>
+                        <p>Tras superar el proceso de revisión, tu servicio será publicado en el directorio web y podrá ser visto por todos los usuarios.</p>
+
+                        <h4 id="list-item-4">¿Puedo hacer cambios durante el proceso de revisión?</h4>
+                        <p>Sí, puedes realizar cambios en la información durante el proceso de revisión (como precios, descripciones o redes sociales). Sin embargo, cada cambio reinicia el proceso de revisión, lo que podría prolongar la publicación de tu servicio. Por ello, se recomienda realizar solo los cambios estrictamente necesarios para minimizar el tiempo de inactividad.</p>
                     </div>
                 </div>
             </div>
+
         <?php include_once "footer.php"; ?>
     </div>
     
