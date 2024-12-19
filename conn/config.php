@@ -7,7 +7,7 @@ if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
 
 return [
     'servername' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'dbname' => 'pruebas',
+    'username' => 'u734923132_Chuk_Nub',
+    'password' => 'E=8w~?:q4',
+    'dbname' => 'u734923132_Mer_ka_C_tin',
 ];
